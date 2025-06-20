@@ -80,7 +80,7 @@ let db;
     if (rows3[0].count === 0) {
       await db.execute(`
         INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating)
-        VALUES (1, 2, 1, 5),
+        VALUES (1, 2, 5, 5),
         (3, 2, 3, 4)
       `);
     }
