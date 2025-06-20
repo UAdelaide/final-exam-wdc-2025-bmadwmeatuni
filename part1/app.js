@@ -66,9 +66,9 @@ let db;
 app.get('/', async (req, res) => {
   try {
     const [users] = await db.execute('SELECT * FROM books');
-    res.json(books);
+    res.json(users);
   } catch (err) {
-    res.status(500).json({ error: 'Failed to fetch books' });
+    res.status(500).json({ error: 'Failed to fetch Users' });
   }
 });
 
