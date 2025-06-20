@@ -5,7 +5,7 @@ VALUES ('Max', 'medium', (SELECT user_id FROM Users WHERE username = 'alice123')
 ('Bow', 'medium', (SELECT user_id FROM Users WHERE username = 'spongebob')),
 ('Mayonnaise', 'small', (SELECT user_id FROM Users WHERE username = 'spongebob'));
 
-INSERT INTO WalkRequests (requested_time, duration_minutes, dog_id)
+INSERT INTO WalkRequests (requested_time, duration_minutes, status, dog_id)
 VALUES ('Max', 'medium', (SELECT user_id FROM Users WHERE username = 'alice123')),
 ('Bella', 'small', (SELECT user_id FROM Users WHERE username = 'carol123')),
 ('Luna', 'large', (SELECT user_id FROM Users WHERE username = 'carol123')),
