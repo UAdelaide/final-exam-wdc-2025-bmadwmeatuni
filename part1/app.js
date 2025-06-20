@@ -81,7 +81,7 @@ let db;
       await db.execute(`
         INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating)
         VALUES (1, 2, 1, 5),
-        ('2025-06-10 09:30:00', 45, 'accepted', 'Beachside Ave', (SELECT dog_id FROM Dogs WHERE name = 'Bella'))
+        ()
       `);
     }
   } catch (err) {
