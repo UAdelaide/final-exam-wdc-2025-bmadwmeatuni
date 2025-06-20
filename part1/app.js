@@ -105,7 +105,9 @@ app.get('/api/dogs', async (req, res) => {
 app.get('/api/walkrequests/open', async (req, res) => {
   try {
     const [open] = await db.execute(`
-        SELECT 
+        SELECT
+        FROM WalkRequests
+        WHERE 
         `);
     res.json(open);
   } catch (err) {
