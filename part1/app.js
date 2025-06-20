@@ -106,8 +106,8 @@ app.get('/api/walkrequests/open', async (req, res) => {
   try {
     const [open] = await db.execute(`
         SELECT
-        FROM WalkRequests
-        WHERE 
+        FROM WalkRequests r
+        WHERE r.status = 'open'
         `);
     res.json(open);
   } catch (err) {
