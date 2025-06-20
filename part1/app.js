@@ -142,6 +142,7 @@ app.get('/api/walkers/summary', async (req, res) => {
         COUNT(rate.rating_id) AS total_ratings,
         FROM WalkRatings rate
         JOIN Users u ON rate.walker_id = u.user_id
+        WHERE u.role = 'walker'
         GROUP BY u.user_id
         `);
     res.json(open);
