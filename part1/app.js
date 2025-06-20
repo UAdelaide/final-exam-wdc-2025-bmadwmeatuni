@@ -93,7 +93,7 @@ app.get('/', async (req, res) => {
 app.get('/api/dogs', async (req, res) => {
   try {
     const [dogs] = await db.execute(`
-        SELECT Dogs.
+        SELECT Dogs.name AS dog_name, 
         FROM Dogs
         `);
     res.json(dogs);
