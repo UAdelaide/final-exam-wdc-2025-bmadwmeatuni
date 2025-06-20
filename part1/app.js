@@ -90,7 +90,7 @@ let db;
       await db.execute(`
         INSERT INTO WalkApplications (request_id, walker_id, status)
         VALUES (5, 2, 'accepted'),
-        (2, 2, 'accepted'),
+        (3, 2, 'accepted'),
       `);
     }
   } catch (err) {
