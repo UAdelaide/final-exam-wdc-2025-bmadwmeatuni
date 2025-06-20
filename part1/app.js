@@ -60,7 +60,7 @@ let db;
         ('Bella', 'small', (SELECT user_id FROM Users WHERE username = 'carol123')),
         ('Luna', 'large', (SELECT user_id FROM Users WHERE username = 'carol123')),
         ('Bow', 'medium', (SELECT user_id FROM Users WHERE username = 'spongebob')),
-        ('Mayonnaise', 'small', (SELECT user_id FROM Users WHERE username = 'spongebob'));
+        ('Mayonnaise', 'small', (SELECT user_id FROM Users WHERE username = 'spongebob'))
       `);
     }
 
@@ -72,19 +72,16 @@ let db;
         ('2025-06-10 09:30:00', 45, 'accepted', 'Beachside Ave', (SELECT dog_id FROM Dogs WHERE name = 'Bella')),
         ('2025-06-10 10:00:00', 60, 'open', 'Esplanade', (SELECT dog_id FROM Dogs WHERE name = 'Luna')),
         ('2025-06-10 23:45:00', 5, 'cancelled', 'Churchill Rd', (SELECT dog_id FROM Dogs WHERE name = 'Bow')),
-        ('2025-06-10 00:00:05', 15, 'accepted', 'Bowden', (SELECT dog_id FROM Dogs WHERE name = 'Mayonnaise'));
+        ('2025-06-10 00:00:05', 15, 'accepted', 'Bowden', (SELECT dog_id FROM Dogs WHERE name = 'Mayonnaise'))
       `);
     }
 
     const [rows3] = await db.execute('SELECT COUNT(*) AS count FROM WalkRatings');
     if (rows3[0].count === 0) {
       await db.execute(`
-        INSERT INTO WalkRatings (request_id, walker_id, owner_id, location, dog_id)
+        INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating)
         VALUES ('2025-06-10 08:00:00', 30, 'open', 'Parklands', (SELECT dog_id FROM Dogs WHERE name = 'Max')),
-        ('2025-06-10 09:30:00', 45, 'accepted', 'Beachside Ave', (SELECT dog_id FROM Dogs WHERE name = 'Bella')),
-        ('2025-06-10 10:00:00', 60, 'open', 'Esplanade', (SELECT dog_id FROM Dogs WHERE name = 'Luna')),
-        ('2025-06-10 23:45:00', 5, 'cancelled', 'Churchill Rd', (SELECT dog_id FROM Dogs WHERE name = 'Bow')),
-        ('2025-06-10 00:00:05', 15, 'accepted', 'Bowden', (SELECT dog_id FROM Dogs WHERE name = 'Mayonnaise'));
+        ('2025-06-10 09:30:00', 45, 'accepted', 'Beachside Ave', (SELECT dog_id FROM Dogs WHERE name = 'Bella'))
       `);
     }
   } catch (err) {
