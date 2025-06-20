@@ -66,7 +66,11 @@ app.get('/', async (req, res) => {
   }
 });
 
-app.get('/api/dogs', async (req))
+app.get('/api/dogs', async (req, res) => {
+    try {
+        
+    }
+})
 
 app.use(express.static(path.join(__dirname, 'public')));
 
