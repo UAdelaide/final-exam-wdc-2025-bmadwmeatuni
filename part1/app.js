@@ -29,7 +29,7 @@ let db;
     // Read sql file as a string
     const dogWalkSql = fs.readFileSync(path.join(__dirname, 'dogwalks.sql'), 'utf8');
 
-    const statements = dogWalkSql
+    const statements = dogWalkSql.split(';')
 
     // Now connect to the created database
     db = await mysql.createConnection({
