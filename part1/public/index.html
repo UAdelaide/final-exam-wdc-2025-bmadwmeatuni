@@ -15,6 +15,25 @@
     </div>
 
     <script>
+        const { createApp } = Vue;
+
+        createApp({
+            data() {
+                return {
+                    dogName: 'Hot Dawg'
+                };
+            },
+            methods: {
+                summonDog() {
+                    // Logic to summon a dog (or PoKemOn) can be added here
+                    this.dogName = 'Hot Dawg';
+                }
+            },
+            mounted() {
+                // Automatically summon a dog when the app is mounted
+                this.summonDog();
+            }
+        }).mount('#app');
     </script>
 </body>
 </html>
