@@ -28,7 +28,7 @@
             },
             methods: {
                 async summonDog() {
-                    this.dogName = 'Hot Dawg';
+                    const response = await fetch('https://dog.ceo/api/breeds/image/random');
                 }
             },
             mounted() {
