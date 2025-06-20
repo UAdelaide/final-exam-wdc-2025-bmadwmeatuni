@@ -80,7 +80,7 @@ let db;
     if (rows3[0].count === 0) {
       await db.execute(`
         INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating)
-        VALUES (1, , 'open', 'Parklands', (SELECT dog_id FROM Dogs WHERE name = 'Max')),
+        VALUES (1, 2, 'open', 'Parklands', (SELECT dog_id FROM Dogs WHERE name = 'Max')),
         ('2025-06-10 09:30:00', 45, 'accepted', 'Beachside Ave', (SELECT dog_id FROM Dogs WHERE name = 'Bella'))
       `);
     }
