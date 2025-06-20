@@ -137,7 +137,7 @@ app.get('/api/walkrequests/open', async (req, res) => {
 
 app.get('/api/walkers/summary', async (req, res) => {
   try {
-    const [open] = await db.execute(`
+    const [summary] = await db.execute(`
         SELECT u.username AS walker_username,
         COUNT(rate.rating_id) AS total_ratings,
         ROUND(AVG(rate.rating), 1) AS average_rating,
@@ -151,7 +151,7 @@ app.get('/api/walkers/summary', async (req, res) => {
         WHERE u.role = 'walker'
         GROUP BY u.user_id
         `);
-    res.json(open);
+    res.json(summary);
   } catch (err) {
     res.status(500).json({ error: 'Failed to fetch open walkers summary' });
   }
