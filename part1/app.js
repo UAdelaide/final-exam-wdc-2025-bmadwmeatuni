@@ -26,6 +26,8 @@ let db;
       password: '' // Set your MySQL root password
     });
 
+    const dogWalkSql = fs.readFileSync(path.join(__dirname, '.sql'), 'utf8');
+
     // Now connect to the created database
     db = await mysql.createConnection({
       host: 'localhost',
