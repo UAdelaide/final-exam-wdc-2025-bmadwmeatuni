@@ -62,7 +62,7 @@ let db;
 // Route to return users as JSON
 app.get('/', async (req, res) => {
   try {
-    const [users] = await db.execute('SELECT * FROM books');
+    const [users] = await db.execute('SELECT * FROM Users');
     res.json(users);
   } catch (err) {
     res.status(500).json({ error: 'Failed to fetch Users' });
