@@ -1,2 +1,2 @@
 INSERT INTO Dogs (name, size, owner_id)
-VALUES ('Max', 'medium', )
+VALUES ('Max', 'medium', SELECT)
