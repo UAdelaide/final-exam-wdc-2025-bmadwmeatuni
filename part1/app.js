@@ -107,7 +107,8 @@ app.get('/api/walkrequests/open', async (req, res) => {
     const [open] = await db.execute(`
         SELECT r.request_id AS request_id, r.requested_time AS requested_time, r.duration_minutes AS duration_minutes, r.location AS location,
         FROM WalkRequests r
-        JOIN Dogs d ON r
+        JOIN Dogs d ON r.dog_id = d.dog_id
+        JOIN Users u ON 
         WHERE r.status = 'open'
         `);
     res.json(open);
