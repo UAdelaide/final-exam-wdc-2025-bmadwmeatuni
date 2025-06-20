@@ -76,6 +76,14 @@ let db;
       `);
     }
 
+    const [rows4] = await db.execute('SELECT COUNT(*) AS count FROM WalkApplications');
+    if (rows4[0].count === 0) {
+      await db.execute(`
+        INSERT INTO WalkApplications (request_id, walker_id, status)
+        VALUES (5, 2, 'accepted'),
+        (3, 2, 'accepted'),
+      `);
+    }
 
     const [rows3] = await db.execute('SELECT COUNT(*) AS count FROM WalkRatings');
     if (rows3[0].count === 0) {
