@@ -6,4 +6,4 @@ VALUES ('Max', 'medium', (SELECT user_id FROM Users WHERE username = 'alice123')
 ('Mayonnaise', 'small', (SELECT user_id FROM Users WHERE username = 'spongebob'));
 
 INSERT INTO WalkRequests (requested_time, duration_minutes, status, location, dog_id)
-VALUES ('2025-06-', 'medium', (SELECT dog_id FROM Dogs WHERE name = 'Max')),
+VALUES ('2025-06-10 08:00:00', , (SELECT dog_id FROM Dogs WHERE name = 'Max')),
