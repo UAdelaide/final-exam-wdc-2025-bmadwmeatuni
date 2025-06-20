@@ -105,13 +105,13 @@ app.get('/api/dogs', async (req, res) => {
 app.get('/api/walkrequests/open', async (req, res) => {
   try {
     const [open] = await db.execute(`
-        SELECT r.request_id AS request_id, r.requested_time AS requested_time, r.duration_minutes AS duration_minutes, r.location AS location, 
+        SELECT r.request_id AS request_id, r.requested_time AS requested_time, r.duration_minutes AS duration_minutes, r.location AS location,
         FROM WalkRequests r
         WHERE r.status = 'open'
         `);
     res.json(open);
   } catch (err) {
-    res.status(500).json({ error: 'Failed to fetch dogs' });
+    res.status(500).json({ error: 'Failed to fetch open walk requests' });
   }
 });
 
