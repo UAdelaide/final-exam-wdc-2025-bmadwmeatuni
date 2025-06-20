@@ -105,8 +105,7 @@ app.get('/api/dogs', async (req, res) => {
 app.get('/api/walkrequests/open', async (req, res) => {
   try {
     const [open] = await db.execute(`
-        SELECT Dogs.name AS dog_name, Dogs.size AS size, Users.username AS owner_username
-        FROM Dogs JOIN Users ON Dogs.owner_id = Users.user_id
+        SELECT 
         `);
     res.json(open);
   } catch (err) {
