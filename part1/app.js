@@ -71,8 +71,8 @@ app.get('/', async (req, res) => {
   }
 });
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+//  app.use('/', indexRouter);
+//  app.use('/users', usersRouter);
 
 app.use(express.static(path.join(__dirname, 'public')));
 
