@@ -76,7 +76,7 @@ let db;
       `);
     }
 
-    const [rows3] = await db.execute('SELECT COUNT(*) AS count FROM WalkRequests');
+    const [rows3] = await db.execute('SELECT COUNT(*) AS count FROM WalkRatings');
     if (rows3[0].count === 0) {
       await db.execute(`
         INSERT INTO WalkRequests (requested_time, duration_minutes, status, location, dog_id)
