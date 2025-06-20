@@ -85,10 +85,10 @@ let db;
       `);
     }
 
-    const [rows4] = await db.execute('SELECT COUNT(*) AS count FROM WalkRatings');
-    if (rows3[0].count === 0) {
+    const [rows4] = await db.execute('SELECT COUNT(*) AS count FROM WalkApplications');
+    if (rows4[0].count === 0) {
       await db.execute(`
-        INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating)
+        INSERT INTO WalkApplications (request_id, walker_id, owner_id, rating)
         VALUES (1, 2, 1, 5),
         (3, 2, 3, 4)
       `);
