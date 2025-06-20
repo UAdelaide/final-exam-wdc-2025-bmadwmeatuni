@@ -32,7 +32,7 @@ let db;
     const statements = dogWalkSql.split(';').map(s => s.trim()).filter(s => s.length > 0);
 
     for (const statement of statements) {
-      await connection.execute(statement);
+      await connection.query(statement);
     }
 
     await connection.end();
