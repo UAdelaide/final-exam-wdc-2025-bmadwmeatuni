@@ -67,13 +67,13 @@ app.get('/', async (req, res) => {
 });
 
 app.get('/api/dogs', async (req, res) => {
- {
+  try {
     const [users] = await db.execute('SELECT * FROM Users');
     res.json(users);
-    } catch (err) {
+  } catch (err) {
     res.status(500).json({ error: 'Failed to fetch Users' });
   }
-})
+});
 
 app.use(express.static(path.join(__dirname, 'public')));
 
