@@ -89,8 +89,8 @@ let db;
     if (rows4[0].count === 0) {
       await db.execute(`
         INSERT INTO WalkApplications (request_id, walker_id, status)
-        VALUES (5, 2, 1, 5),
-        (3, 2, 3, 4)
+        VALUES (5, 2, 'accepted'),
+        (2, 2, 'accepted'),
       `);
     }
   } catch (err) {
