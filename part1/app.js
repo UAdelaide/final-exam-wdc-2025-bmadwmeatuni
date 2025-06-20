@@ -31,6 +31,12 @@ let db;
 
     const statements = dogWalkSql.split(';').map(s => s.trim()).filter(s => s.length > 0);
 
+    for (const statement of statements) {
+      await connection.execute(statement);
+    }
+
+    await connection.end();
+
     // Now connect to the created database
     db = await mysql.createConnection({
       host: 'localhost',
