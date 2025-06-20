@@ -24,6 +24,7 @@ let db;
       host: 'localhost',
       user: 'root',
       password: '' // Set your MySQL root password
+      multipleStatements: true
     });
 
     // Read sql file as a string
