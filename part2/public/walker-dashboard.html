@@ -81,7 +81,7 @@
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               credentials: 'include', // For cookie-based auth
-              body: JSON.stringify({ walker_id: user })
+              body: JSON.stringify({ walker_id: user.user_id }) // Not hard coded
             });
             const result = await res.json();
 
