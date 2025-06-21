@@ -62,9 +62,16 @@ router.post('/:id/apply', async (req, res) => {
 // GET all the dogs owned by the logged in user (owner only)
 router.get('/my-dogs', async (req,res) => {
   const userId = req.session.user.user_id; // user_id is stored in session
-  // In the instance that the user is not logged in or is not
+  // In the instance that the user is not logged in or is not an owner, return error
   if(!req.session.user || req.session.user.role !== 'owner') {
     return res.status(403).json({error: 'Unauthorized access'});
+  }
+
+
+  try {
+
+  } catch (error) {
+    
   }
 
 });
