@@ -64,7 +64,8 @@
             const res = await fetch('/api/users/me', {credentials: 'include' //For cookie-based auth
             });
             if (!res.ok) throw new Error('Not logged in');
-            walks.value = await res.json();
+            const user = await res.json();
+            return user;
           } catch (err) {
             error.value = err.message;
           }
