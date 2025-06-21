@@ -70,7 +70,7 @@
             const images = await Promise.all(
               dogs.map(async(dog) => {
                 const imgResponse = await fetch('https://dog.ceo/api/breeds/image/random');
-                cons
+                const imgData = await imgResponse.json();
               })
             )
           } catch (err) {
