@@ -218,6 +218,11 @@ function logout(){
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.withCredentials = true; // Allow cookies to be sent with the request
 
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+        
+    };
+
     // Open connection to server & send the post data using a POST request
     xmlhttp.open("POST", "api/users/logout", true); // since userRoutes.js is mounted at /api/users
     xmlhttp.send();
