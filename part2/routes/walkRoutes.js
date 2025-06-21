@@ -64,7 +64,7 @@ router.get('/my-dogs', async (req,res) => {
   const userId = req.session.user.user_id; // user_id is stored in session
 
   if(!req.session.user || req.session.user.role !== 'owner') {
-    return res.status(403).json({});
+    return res.status(403).json({'Unauthorized access'});
   }
 });
 
