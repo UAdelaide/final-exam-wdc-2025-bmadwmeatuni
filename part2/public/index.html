@@ -73,7 +73,9 @@
                 const imgData = await imgResponse.json();
                 return {...dog, photo: imgData.message };
               })
-            )
+            );
+
+            return
           } catch (err) {
             console.error('Failed to load dogs:', err);
           }
