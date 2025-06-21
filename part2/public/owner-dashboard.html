@@ -77,21 +77,6 @@
 
     createApp({
       setup() {
-        // Adding the dogs to Vue instance
-        const dogs = ref([]);
-
-        async function loadDogs() {
-          try {
-            const res = await fetch('/api/walks/my-dogs', {
-              credentials: 'include' // For cookie-based auth
-            });
-            if (!res.ok) throw new Error('Failed to load dogs');
-            dogs.value = await res.json();
-          } catch (err) {
-            error.value = 'Failed to load dogs';
-          }
-        }
-
         const form = ref({
           dog_id: '',
           requested_time: '',
@@ -138,6 +123,21 @@
           } catch (err) {
             error.value = err.message;
             message.value = '';
+          }
+        }
+
+        // Adding the dogs to Vue instance
+        const dogs = ref([]);
+
+        async function loadDogs() {
+          try {
+            const res = await fetch('/api/walks/my-dogs', {
+              credentials: 'include' // For cookie-based auth
+            });
+            if (!res.ok) throw new Error('Failed to load dogs');
+            dogs.value = await res.json();
+          } catch (err) {
+            error.value = 'Failed to load dogs';
           }
         }
 
