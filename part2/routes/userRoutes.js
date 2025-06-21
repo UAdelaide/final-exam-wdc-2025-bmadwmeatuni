@@ -1,14 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../models/db');
-// Middleware for session management
-const session = require('express-session');
-
-router.use(session({
-  secret: 'dog-walk-secret',
-  resave: false,
-  saveUninitialized: false
-}));
 
 // GET all users (for admin/testing)
 router.get('/', async (req, res) => {
