@@ -216,7 +216,7 @@ function logout(){
 
     // Create AJAX Request
     var xmlhttp = new XMLHttpRequest();
-    sml
+    xmlhttp.withCredentials = true; // Allow cookies to be sent with the request
 
     // Open connection to server & send the post data using a POST request
     xmlhttp.open("POST", "api/users/logout", true); // since userRoutes.js is mounted at /api/users
