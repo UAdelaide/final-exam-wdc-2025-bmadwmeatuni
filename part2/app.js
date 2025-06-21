@@ -12,7 +12,8 @@ app.use(session({
   resave: false,
   saveUninitialized: false,
   cookie: {
-    secure
+    secure: false,
+    maxAge: 1000 * 60 * 60
   }
 }));
 
