@@ -59,6 +59,7 @@ router.post('/:id/apply', async (req, res) => {
   }
 });
 
-// 
+// GET all the dogs owned by the logged in user (owner only)
+
 
 module.exports = router;
