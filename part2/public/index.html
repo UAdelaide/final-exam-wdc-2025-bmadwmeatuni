@@ -61,10 +61,11 @@
 
         async function loadDogsNPics() {
           try {
+            // Fetch the list of dogs JSON
             const res = await fetch('api/dogs');
             if (!res.ok) throw new Error('Failed to fetch dogs');
             const dogs = await res.json();
-            
+
           } catch (err) {
             console.error('Failed to load dogs:', err);
           }
