@@ -80,7 +80,10 @@
           dogs.value = await loadDogsNPics();
         });
 
-        return { dogs };
+        return {
+          message,
+          dogs
+        };
       }
     }).mount('#app');
   </script>
