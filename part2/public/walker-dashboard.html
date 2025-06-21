@@ -63,7 +63,7 @@
           try {
             const res = await fetch('/api/users/me', {credentials: 'include' //For cookie-based auth
             });
-            if (!res.ok) throw new Error('Failed to load walk requests');
+            if (!res.ok) throw new Error('Not logged in');
             walks.value = await res.json();
           } catch (err) {
             error.value = err.message;
