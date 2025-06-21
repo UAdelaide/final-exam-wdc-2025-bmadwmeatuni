@@ -7,9 +7,8 @@ const session = require('express-session');
 router.use(session({
   secret: 'dog-walk-secret',
   resave: false,
-  
-}
-));
+  saveUninitialized: false
+}));
 // GET all users (for admin/testing)
 router.get('/', async (req, res) => {
   try {
