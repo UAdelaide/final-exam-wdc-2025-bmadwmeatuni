@@ -69,9 +69,10 @@ router.get('/my-dogs', async (req,res) => {
 
 
   try {
-
-  } catch (error) {
     
+
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to fetch dogs' });
   }
 
 });
