@@ -81,7 +81,10 @@
           }
         }
 
-        
+        onMounted(async() => {
+          dogs.value = await loadDogsNPics();
+          
+        })
       }
     }).mount('#app');
   </script>
