@@ -66,6 +66,7 @@
             if (!res.ok) throw new Error('Failed to fetch dogs');
             const dogs = await res.json();
 
+            // Fetch the random dog images
           } catch (err) {
             console.error('Failed to load dogs:', err);
           }
