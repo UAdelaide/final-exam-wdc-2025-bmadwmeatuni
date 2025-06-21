@@ -65,7 +65,7 @@ router.post('/logout', (req, res) => {
   });
 });
 
-app.get('/api/dogs', async (req, res) => {
+router.get('/api/dogs', async (req, res) => {
   try {
     const [dogs] = await db.execute(`
         SELECT Dogs.dog_id, Dogs.name AS Name, Dogs.size AS Size, Users.user_id AS OwnerID
