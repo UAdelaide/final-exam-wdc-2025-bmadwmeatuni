@@ -73,7 +73,8 @@
     createApp({
       setup() {
         // Adding the dogs to Vue instance
-        const dogs = ref()
+        const dogs = ref([]);
+        
 
         const form = ref({
           dog_id: '',
