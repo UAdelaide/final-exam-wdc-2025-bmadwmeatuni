@@ -183,7 +183,7 @@ function login(){
 
     // Create AJAX Request
     var xmlhttp = new XMLHttpRequest();
-    
+    xmlhttp.withCredentials = true; // Allow cookies to be sent with the request
 
     // Define function to run on response
     xmlhttp.onreadystatechange = function() {
