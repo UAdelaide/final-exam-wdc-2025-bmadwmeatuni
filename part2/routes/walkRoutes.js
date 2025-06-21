@@ -67,13 +67,12 @@ router.get('/my-dogs', async (req,res) => {
     return res.status(403).json({error: 'Unauthorized access'});
   }
 
-
+  // Fetch the dogs
   try {
     const [dogs] = await db.query(`
       SELECT dog_id, name FROM Dogs WHERE owner_id = ?
       `, [userId]);
     res.json(dogs);
-
   } catch (err) {
     res.status(500).json({ error: 'Failed to fetch dogs' });
   }
