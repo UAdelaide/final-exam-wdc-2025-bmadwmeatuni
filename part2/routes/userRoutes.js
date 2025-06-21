@@ -59,7 +59,7 @@ router.post('/login', async (req, res) => {
     }
     const user = rows[0]; // Assuming password is stored as plain text for simplicity
     req.session.user = user; // Store user in session
-    res.json({ message: 'Login successful', user: rows[0] });
+    res.json({ message: 'Login successful', role:  });
   } catch (error) {
     res.status(500).json({ error: 'Login failed' });
   }
