@@ -96,6 +96,7 @@
             const res = await fetch('/api/walks', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
+              credentials: 'include', // For cookie-based auth
               body: JSON.stringify(form.value)
             });
             const result = await res.json();
