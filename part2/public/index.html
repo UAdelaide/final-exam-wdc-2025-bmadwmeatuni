@@ -69,10 +69,10 @@
             // Fetch the random dog images
             const images = await Promise.all(
               dogs.map(async(dog) => {
-                const imgRes
+                const imgResponse = await fetch('https://dog.ceo/api/breeds/image/random');
+                cons
               })
             )
-            //await fetch('https://dog.ceo/api/breeds/image/random');
           } catch (err) {
             console.error('Failed to load dogs:', err);
           }
