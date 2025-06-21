@@ -63,13 +63,13 @@
           try {
             const res = await fetch('api/dogs');
             if (!res.ok) throw new Error('Failed to fetch dogs');
-            }
+            const 
           } catch (err) {
             console.error('Failed to load dogs:', err);
           }
         }
       }
-    ).mount('#app');
+    }).mount('#app');
   </script>
   <script src="/javascripts/page.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
