@@ -60,8 +60,9 @@ router.post('/login', async (req, res) => {
 // POST logout
 router.post('/logout', (req, res) => {
   req.session.destroy(() => {
-    
-  })
+    res.clearCookie('connect.sid'); // Clear session cookie
+    res.json({ message: 'Logged out successfully' });
+  });
 });
 
 module.exports = router;
