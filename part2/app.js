@@ -1,7 +1,6 @@
 const express = require('express');
 const path = require('path');
 require('dotenv').config();
-const db = require('../models/db');
 
 const app = express();
 
@@ -28,19 +27,6 @@ const userRoutes = require('./routes/userRoutes');
 
 app.use('/api/walks', walkRoutes);
 app.use('/api/users', userRoutes);
-
-app.get('/api/dogs', async (req, res) => {
-  try {
-    const [dogs] = await db.execute(`
-        SELECT Dogs.dog_id, Dogs.name AS Name, Dogs.size AS Size, Users.user_id AS OwnerID
-        FROM Dogs JOIN Users ON Dogs.owner_id = Users.user_id
-        `);
-    res.json(dogs);
-  } catch (err) {
-    res.status(500).json({ error: 'Failed to fetch dogs' });
-  }
-});
-
 
 // Export the app instead of listening here
 module.exports = app;
