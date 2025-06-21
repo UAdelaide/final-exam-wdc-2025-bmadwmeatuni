@@ -77,7 +77,10 @@
 
         async function loadDogs() {
           try {
-            const res = await fetch
+            const res = await fetch('/api/walks/my-dogs', {
+              credentials: 'include' // For cookie-based auth
+            });
+            dogs.value = await res.json();
           } catch (err) {
             error.value = 'Failed to load dogs';
           }
