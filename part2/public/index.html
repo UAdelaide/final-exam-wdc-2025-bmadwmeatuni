@@ -48,15 +48,10 @@
 
   <script>
     const { createApp, ref, onMounted } = Vue;
-    createApp({
-      data() {
-        return {
-          message: 'Welcome to the Dog Walking Service!'
-        };
-      }
-    }).mount('#app');
+
     createApp({
       setup() {
+        const message = ref('Welcome to the Dog Walking Service');
         const dogs = ref([]);
 
         async function loadDogsNPics() {
