@@ -41,7 +41,7 @@
             <td>{{ dog.Name }}</td>
             <td>{{ dog.Size }}</td>
             <td>{{ dog.OwnerID }}</td>
-            <td></td>
+            <td><img :src="dog.photo" alt="Dog photo" width="100" v-if="dog.photo"></td>
           </tr>
         </tbody>
       </table>
