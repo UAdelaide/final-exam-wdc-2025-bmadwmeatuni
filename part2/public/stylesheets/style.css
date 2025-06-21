@@ -154,3 +154,7 @@ textarea {
 section {
     display: none;
 }
+
+.registered-dogs {
+    padding-top: 20px;
+}
