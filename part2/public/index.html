@@ -61,9 +61,10 @@
 
         async function loadDogsNPics() {
           try {
-            
-          } catch (error) {
 
+          } catch (err) {
+            console.error('Failed to load dogs:', err);
+            
           }
         }
       }
