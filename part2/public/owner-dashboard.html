@@ -82,7 +82,9 @@
 
         async function loadWalks() {
           try {
-            const res = await fetch('/api/walks');
+            const res = await fetch('/api/walks', {
+              credentials: 'include' // For cookie-based auth
+            });
             walks.value = await res.json();
           } catch (err) {
             error.value = 'Failed to load walk requests';
