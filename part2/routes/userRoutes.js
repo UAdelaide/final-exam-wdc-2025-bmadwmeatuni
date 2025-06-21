@@ -9,6 +9,7 @@ router.use(session({
   resave: false,
   saveUninitialized: false
 }));
+
 // GET all users (for admin/testing)
 router.get('/', async (req, res) => {
   try {
