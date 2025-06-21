@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../models/db');
+// Middleware for session management
+const session = require('express-session');
 
 // GET all users (for admin/testing)
 router.get('/', async (req, res) => {
