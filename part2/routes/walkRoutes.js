@@ -63,7 +63,9 @@ router.post('/:id/apply', async (req, res) => {
 router.get('/my-dogs', async (req,res) => {
   const userId = req.session.user.user_id; // user_id is stored in session
 
-  if(!req.session.user || req)
+  if(!req.session.user || req.session.user.role !== 'owner') {
+    
+  }
 });
 
 module.exports = router;
