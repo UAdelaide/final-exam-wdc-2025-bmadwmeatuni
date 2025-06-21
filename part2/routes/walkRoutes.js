@@ -62,10 +62,11 @@ router.post('/:id/apply', async (req, res) => {
 // GET all the dogs owned by the logged in user (owner only)
 router.get('/my-dogs', async (req,res) => {
   const userId = req.session.user.user_id; // user_id is stored in session
-
+  
   if(!req.session.user || req.session.user.role !== 'owner') {
-    return res.status(403).json({'Unauthorized access'});
+    return res.status(403).json({error: 'Unauthorized access'});
   }
+
 });
 
 module.exports = router;
