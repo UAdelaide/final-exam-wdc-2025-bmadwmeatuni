@@ -5,7 +5,9 @@ const db = require('../models/db');
 const session = require('express-session');
 
 router.use(session({
-  secret: 'dog'
+  secret: 'dog-walk-secret',
+  resave: false,
+  
 }
 ));
 // GET all users (for admin/testing)
