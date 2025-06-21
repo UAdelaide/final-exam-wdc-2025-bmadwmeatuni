@@ -83,8 +83,9 @@
 
         onMounted(async() => {
           dogs.value = await loadDogsNPics();
-          
-        })
+        });
+
+        return { dogs };
       }
     }).mount('#app');
   </script>
