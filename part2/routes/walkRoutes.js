@@ -61,7 +61,8 @@ router.post('/:id/apply', async (req, res) => {
 
 // GET all the dogs owned by the logged in user (owner only)
 router.get('/my-dogs', async (req,res) => {
-  const userId=
+  const userId = req.session.user.user_id; // user_id is stored in session
+  
 });
 
 module.exports = router;
