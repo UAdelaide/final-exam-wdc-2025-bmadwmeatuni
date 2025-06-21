@@ -61,7 +61,8 @@
 
         async function loadDogsNPics() {
           try {
-            const res = await fetch('api/dogs', {credentials: 'include' //For cookie-based auth
+            const res = await fetch('api/dogs');
+            if (!res.ok) throw new Error('Failed to fetch dogs');
             });
           } catch (err) {
             console.error('Failed to load dogs:', err);
