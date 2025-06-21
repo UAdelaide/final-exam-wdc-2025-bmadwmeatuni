@@ -67,7 +67,8 @@
             const dogs = await res.json();
 
             // Fetch the random dog images
-            const images = await fetch('https://dog.ceo/api/breeds/image/random');
+            const images = await Promise.all
+            //await fetch('https://dog.ceo/api/breeds/image/random');
           } catch (err) {
             console.error('Failed to load dogs:', err);
           }
