@@ -27,6 +27,7 @@
               <option disabled value="">-- Choose a dog --</option>
               <option v-for="dog in dogs" :key="dog.dog_id" :value="dog.dog_id">
                 {{ dog.name }}
+              </option>
             </select>
           </div>
           <div class="mb-3">
