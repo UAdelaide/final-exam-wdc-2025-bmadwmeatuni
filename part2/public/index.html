@@ -25,7 +25,24 @@
     </form>
     <h1 style="margin-top: 30px;">All Registered Dogs</h1>
     <div>
-      
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Dog ID</th>
+            <th>Name</th>
+            <th>Breed</th>
+            <th>Size</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="dog in dogs" :key="dog.dog_id">
+            <td>{{ dog.dog_id }}</td>
+            <td>{{ dog.name }}</td>
+            <td>{{ dog.breed }}</td>
+            <td>{{ dog.size }}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 
