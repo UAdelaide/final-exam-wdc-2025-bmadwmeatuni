@@ -183,6 +183,7 @@ function login(){
 
     // Create AJAX Request
     var xmlhttp = new XMLHttpRequest();
+    
 
     // Define function to run on response
     xmlhttp.onreadystatechange = function() {
