@@ -195,8 +195,8 @@ function login(){
                 // Redirect to walker page
                 window.location.href = 'walker-dashboard.html';
             } else {
-                // Redirect to user page
-                window.location.href = 'user-dashboard.html';
+                // Unknow role, alert it
+                
             }
         } else if (this.readyState == 4 && this.status >= 400) {
             alert("Login failed");
